@@ -1,3 +1,6 @@
+body {
+  margin: 0px;
+}
 /* Styling for the content container */
 .header {
   font-size: 24px; /* Update with desired font size */
@@ -62,10 +65,10 @@
   /* iFrame styles */
 .iframe {
   position: absolute;
-  top: 64px; /* Add margin to avoid overlap with header */
+  /* top: 64px; */ /* Add margin to avoid overlap with header */
   left: 0;
   width: 100%;
-  height: calc(100vh - 64px); /* Adjust height to fill remaining viewport height */
+  height: 100vh; /* calc(100vh - 64px); */ /* Adjust height to fill remaining viewport height */
   border: none;
 }
 
