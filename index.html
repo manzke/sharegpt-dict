@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>URL Viewer</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Reference to the CSS file -->
+</head>
+<body>
+    <div id="header" class="header">
+        <div id="urlInfoContainer" class="url-info-container">
+          <span id="urlCounter" class="url-counter">
+            URLs loaded: <span id="currentIndex">1</span>/<span id="totalUrls">0</span>
+          </span>
+        </div>
+    </div>
+    <div id="contentContainer" class="content-container">
+        <div id="swipeableContainer" class="swipeable-container">
+          <!-- URLs will be dynamically rendered here as swipeable items -->
+            <div id="overlay"></div> <!-- Added overlay div -->
+        </div>
+    </div>
+    <footer id="footer">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </footer>
+  <script src="script.js"></script> <!-- Reference to the JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* Styling for the content container */
+.header {
+  background-color: blue;
+  color: white;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.url-info-container {
+  display: flex;
+  align-items: center;
+}
+
+.url-counter {
+  margin-right: 16px;
+}
+
+.url-link {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.content-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Styling for the swipeable container */
+  .swipeable-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Styling for the swipeable items */
+  .swipeable-item {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+  }
+  
+  /* Styling for the URL counter */
+  .url-counter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  /* iFrame styles */
+.iframe {
+  position: absolute;
+  top: 64px; /* Add margin to avoid overlap with header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 64px); /* Adjust height to fill remaining viewport height */
+  border: none;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2; /* Ensure the overlay is above the iframe */
+  background-color: transparent; /* Set the overlay background to transparent */
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  z-index: 100; /* Ensure footer is on top of iframe */
+}
