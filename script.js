@@ -1,3 +1,4 @@
+  let urls = [];
   let currentIndex = 0; // Current index of the loaded URL
   
   // Function to fetch and render the URL content
