@@ -830,14 +830,26 @@ const urls = [
       console.error(`Failed to fetch URL: ${url}`, error);
     }
   };
+
+  async function loadUrlsFromFile(urlFile) {
+    try {
+      const response = await fetch(urlFile);
+      const data = await response.text();
+      urls = data.split("\n").filter(url => url.trim() !== ""); // Split URLs by new line and remove empty lines
+      totalUrls = urls.length;
+      totalUrlsElement.textContent = totalUrls;
+      updateURLCounter();
+      updateIframeSrc();
+      updateUrlParam();
+    } catch (error) {
+      console.error("Failed to load URLs from file:", error);
+    }
+  }
   
   // Function to update the URL counter
   const updateURLCounter = () => {
     const urlCounter = document.getElementById('urlCounter');
     urlCounter.textContent = `URLs loaded: ${currentIndex + 1}/${urls.length} (${urls[currentIndex]})`;
-    //fetchAndRenderURL(urls[currentIndex]);
-    //var iframeElement = document.getElementById('iframe');
-    //iframeElement.src = urls[currentIndex];
   };
   
   // Function to handle swipe left event
@@ -848,6 +860,7 @@ const urls = [
       //swipeableContainer.style.transform = `translateX(${-currentIndex * 100}vw)`;
       updateURLCounter();
       updateIframeSrc();
+      updateUrlParam();
     }
   };
   
@@ -859,6 +872,7 @@ const urls = [
       //swipeableContainer.style.transform = `translateX(${-currentIndex * 100}vw)`;
       updateURLCounter();
       updateIframeSrc();
+      updateUrlParam();
     }
   };
 
@@ -880,6 +894,25 @@ const urls = [
       swipeRight();
     }
   });
+
+  function updateUrlParam() {
+    window.history.replaceState({}, document.title, `?index=${currentIndex}`);
+  }  
   
 document.getElementById("prevBtn").addEventListener("click", swipeLeft);
 document.getElementById("nextBtn").addEventListener("click", swipeRight);
+
+// Load the first URL on page load
+window.addEventListener("load", () => {
+  loadUrlsFromFile("sitemap.txt");
+
+  // Check if URL parameter exists for current index
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentIndex = urlParams.get("index");
+  if (currentIndex !== null) {
+    currentIndex = parseInt(currentIndex);
+  }
+
+  updateURLCounter();
+  updateIframeSrc();
+});
