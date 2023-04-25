@@ -20,8 +20,14 @@
       const response = await fetch(urlFile);
       const data = await response.text();
       urls = data.split("\n").filter(url => url.trim() !== ""); // Split URLs by new line and remove empty lines
-      //totalUrls = urls.length;
-      //totalUrlsElement.textContent = totalUrls;
+
+      // Check if URL parameter exists for current index
+      const urlParams = new URLSearchParams(window.location.search);
+      const indexFromURL = urlParams.get("index");
+      if (indexFromURL !== null) {
+        currentIndex = parseInt(indexFromURL);
+      }
+      
       updateURLCounter();
       updateIframeSrc();
       updateUrlParam();
@@ -89,14 +95,4 @@ document.getElementById("nextBtn").addEventListener("click", swipeRight);
 // Load the first URL on page load
 window.addEventListener("load", () => {
   loadUrlsFromFile("sitemap.txt");
-
-  // Check if URL parameter exists for current index
-  const urlParams = new URLSearchParams(window.location.search);
-  const indexFromURL = urlParams.get("index");
-  if (indexFromURL !== null) {
-    currentIndex = parseInt(indexFromURL);
-  }
-
-  updateURLCounter();
-  updateIframeSrc();
 });
