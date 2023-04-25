@@ -20,8 +20,8 @@
       const response = await fetch(urlFile);
       const data = await response.text();
       urls = data.split("\n").filter(url => url.trim() !== ""); // Split URLs by new line and remove empty lines
-      totalUrls = urls.length;
-      totalUrlsElement.textContent = totalUrls;
+      //totalUrls = urls.length;
+      //totalUrlsElement.textContent = totalUrls;
       updateURLCounter();
       updateIframeSrc();
       updateUrlParam();
