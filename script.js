@@ -908,9 +908,9 @@ window.addEventListener("load", () => {
 
   // Check if URL parameter exists for current index
   const urlParams = new URLSearchParams(window.location.search);
-  const currentIndex = urlParams.get("index");
-  if (currentIndex !== null) {
-    currentIndex = parseInt(currentIndex);
+  const indexFromURL = urlParams.get("index");
+  if (indexFromURL !== null) {
+    currentIndex = parseInt(indexFromURL);
   }
 
   updateURLCounter();
