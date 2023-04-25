@@ -8,6 +8,7 @@
   left: 0;
   width: 100%;
   z-index: 1;
+  height: 80px;
 }
 
 .url-info-container {
@@ -84,7 +85,12 @@
   right: 0;
   background-color: #333;
   color: #fff;
-  padding: 10px;
+  height: 80px; /* Update with desired height */
+  padding: 20px; /* Update with desired padding */
   text-align: center;
   z-index: 100; /* Ensure footer is on top of iframe */
+}
+
+.footer-btn {
+  font-size: 24px; /* Update with desired font size */
 }
