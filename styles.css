@@ -1,5 +1,6 @@
 /* Styling for the content container */
 .header {
+  font-size: 24px; /* Update with desired font size */
   background-color: blue;
   color: white;
   padding: 16px;
@@ -91,6 +92,6 @@
   z-index: 100; /* Ensure footer is on top of iframe */
 }
 
-.footer-btn {
+.footer-button {
   font-size: 24px; /* Update with desired font size */
 }
