@@ -848,8 +848,8 @@ const urls = [
   
   // Function to update the URL counter
   const updateURLCounter = () => {
-    const urlCounter = document.getElementById('urlCounter');
-    urlCounter.textContent = `URLs loaded: ${currentIndex + 1}/${urls.length} (${urls[currentIndex]})`;
+    //const urlCounter = document.getElementById('urlCounter');
+    //urlCounter.textContent = `URLs loaded: ${currentIndex + 1}/${urls.length} (${urls[currentIndex]})`;
   };
   
   // Function to handle swipe left event
