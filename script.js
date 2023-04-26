@@ -42,6 +42,7 @@ const swipeRight = () => {
 };
 
 function updateIframeSrc() {
+  var url = urls[currentIndex];
   var iframe = document.getElementById("iframe");
   if (!iframe) {
     iframe = document.createElement('iframe');
@@ -52,7 +53,7 @@ function updateIframeSrc() {
     swipeableContainer.appendChild(iframe);
   }
 
-  iframe.src = urls[currentIndex]; 
+  iframe.src = url; 
 }
 
 function updateUrlParam() {
