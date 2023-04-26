@@ -90,12 +90,27 @@ body {
   right: 0;
   background-color: #333;
   color: #fff;
-  height: 60px; /* Update with desired height */
-  padding: 20px; /* Update with desired padding */
+  height: 80px; /* Updated height */
+  padding: 20px;
   text-align: center;
-  z-index: 100; /* Ensure footer is on top of iframe */
+  z-index: 100;
+  display: flex; /* Added display: flex to align buttons */
+  justify-content: center; /* Added justify-content: center to center align buttons horizontally */
+  align-items: center; /* Added align-items: center to center align buttons vertically */
 }
 
 .footer-button {
-  font-size: 48px; /* Update with desired font size */
+  font-size: 24px; /* Updated font size */
+  background-color: #007bff; /* Added background color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px; /* Added padding for better button appearance */
+  margin: 0 10px; /* Added margin for spacing between buttons */
+  cursor: pointer;
+  border-radius: 5px; /* Added border radius for rounded corners */
+  flex-grow: 1; /* Added flex-grow: 1 to make buttons equally sized */
+}
+
+.footer-button:hover {
+  background-color: #0056b3; /* Added hover effect on button */
 }
