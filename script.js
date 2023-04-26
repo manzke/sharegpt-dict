@@ -43,8 +43,16 @@ const swipeRight = () => {
 
 function updateIframeSrc() {
   var iframe = document.getElementById("iframe");
-  var currentUrl = urls[currentIndex]; // Subtract 1 from currentIndex to get the correct array index
-  iframe.src = currentUrl; 
+  if (!iframe) {
+    iframe = document.createElement('iframe');
+    iframe.id = 'iframe';
+    iframe.src = url;
+    iframe.className = 'swipeable-item';
+    const swipeableContainer = document.getElementById('swipeableContainer');
+    swipeableContainer.appendChild(iframe);
+  }
+
+  iframe.src = urls[currentIndex]; 
 }
 
 function updateUrlParam() {
