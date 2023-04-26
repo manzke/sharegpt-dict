@@ -5,7 +5,11 @@ async function loadUrlsFromFile(urlFile) {
   try {
     const response = await fetch(urlFile);
     const data = await response.text();
-    urls = data.split("\n").filter(url => url.trim() !== ""); // Split URLs by new line and remove empty lines
+    urls = data
+    .split("\n")
+    .filter(url => url.trim() !== "")
+    .sort(); // Split URLs by new line, remove empty lines, and sort alphabetically
+  
 
     // Check if URL parameter exists for current index
     const urlParams = new URLSearchParams(window.location.search);
